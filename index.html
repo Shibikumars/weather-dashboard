@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Dashboard</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Weather Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+
   <div class="container">
     <div class="header">
       <h1>Weather Dashboard</h1>
-      <p>Get real-time weather information by entering a city name</p>
+      <p>Enter a city to get real-time weather info.</p>
     </div>
 
     <div class="weather-input">
@@ -18,12 +22,20 @@
       <button onclick="getWeather()">Get Weather</button>
     </div>
 
+    <!-- Weather Info Section -->
     <div id="weather-info" class="weather-info">
-      <h2 id="city-name"></h2>
-      <p id="temp"></p>
-      <p id="humidity"></p>
-      <p id="description"></p>
+      <div class="weather-card">
+        <h2 id="city-name"></h2>
+        <div id="weather-icon" class="weather-icon"></div>
+        <p id="temp"></p>
+        <p id="humidity"></p>
+        <p id="description"></p>
+      </div>
+      <div class="weather-chart">
+        <canvas id="weather-chart"></canvas>
+      </div>
     </div>
+
   </div>
 
   <script src="script.js"></script>

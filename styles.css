@@ -5,6 +5,7 @@
     box-sizing: border-box;
   }
   
+  /* Body and Container */
   body {
     font-family: 'Arial', sans-serif;
     background: #f0f4f8;
@@ -14,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background 0.5s ease;
   }
   
   .container {
@@ -23,12 +25,14 @@
     padding: 40px 20px;
     width: 90%;
     max-width: 600px;
+    transition: all 0.3s ease;
   }
   
   .header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
     color: #4CAF50;
+    animation: fadeIn 2s ease-in-out;
   }
   
   .header p {
@@ -36,6 +40,7 @@
     color: #555;
   }
   
+  /* Weather Input Section */
   .weather-input {
     margin: 20px 0;
   }
@@ -48,6 +53,7 @@
     border-radius: 5px;
     outline: none;
     margin-right: 10px;
+    transition: border-color 0.3s ease;
   }
   
   .weather-input input:focus {
@@ -69,6 +75,7 @@
     background-color: #388E3C;
   }
   
+  /* Weather Info Section */
   .weather-info {
     margin-top: 20px;
     display: none;
@@ -76,6 +83,8 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
   }
   
   .weather-info h2 {
@@ -89,6 +98,15 @@
     color: #777;
   }
   
+  .weather-info .weather-icon {
+    font-size: 4rem;
+    margin: 20px 0;
+  }
+  
+  .weather-chart {
+    margin-top: 30px;
+  }
+  
   @media (max-width: 600px) {
     .weather-input input {
       width: 60%;
@@ -98,6 +116,18 @@
     }
     .weather-info {
       padding: 15px;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
   
